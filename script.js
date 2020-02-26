@@ -1,4 +1,4 @@
-const apiKey = "3f250e6671872e4d7d4aa89b826d875d";
+const apiKey = "4e6d3e72a1dbf70cdfe7c88719a34218";
 const cityId = 82; //Lisbon
 const cuisineId = 83; //Seafood
 const url = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city&cuisines=${cuisineId}`;
@@ -69,23 +69,23 @@ fetch(url, {
       filteredList.forEach(resto => {
         restaurantContainer.innerHTML += `<a href= ${
           resto.restaurant.url
-        } class="resturant-card"> 
+          } class="resturant-card"> 
           <img class="restaurant-image" src= ${
-            resto.restaurant.photos[0].photo.thumb_url
+          resto.restaurant.photos[0].photo.thumb_url
           }>
         <h3>${resto.restaurant.name}</h3> 
         <div class="b-a-container">
         <p class="address">${resto.restaurant.location.address}</p>
         <button class="booking-button" id="booking-button">${tableBooking(
-          resto.restaurant.has_table_booking
-        )}</button>
+            resto.restaurant.has_table_booking
+          )}</button>
         </div>
         <br>
         <p class="average-cost">${priceSymbol(
-          resto.restaurant.average_cost_for_two
-        )} <img class="smiley" src="${smileIcon(
-          resto.restaurant.user_rating.aggregate_rating
-        )}" alt="smiley">${resto.restaurant.user_rating.aggregate_rating}</p>
+            resto.restaurant.average_cost_for_two
+          )} <img class="smiley" src="${smileIcon(
+            resto.restaurant.user_rating.aggregate_rating
+          )}" alt="smiley">${resto.restaurant.user_rating.aggregate_rating}</p>
         </a>`;
       });
     };
