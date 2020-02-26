@@ -1,6 +1,6 @@
 # Build a Food Review website - Group project 🌮🥑
 
-Our group was given the task of creating a website listing restaurants, reviews and information based on location. Our group brief entailed using the Zomato API (specifically the `/search` endpoint) to list Seafood restaurants in Lisbon, Portugal to build a site in the style of the Wolt site (https://wolt.com/sv/swe/stockholm/discovery/category-pizza:stockholm).
+Our group was given the task of creating a website listing restaurants, reviews and information based on location. Our group brief entailed using the Zomato API (specifically the `/search` endpoint) to list seafood restaurants in Lisbon, Portugal to build a site in the style of the Wolt site (https://wolt.com/sv/swe/stockholm/discovery/category-pizza:stockholm).
 
 
 ## Learning objectives
