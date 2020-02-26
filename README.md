@@ -21,4 +21,4 @@ Our group was given the task of creating a website listing restaurants, reviews 
 
 ## View it live
 
-View the site here:
+View the site here: https://fridamaria-food-project.netlify.com/
