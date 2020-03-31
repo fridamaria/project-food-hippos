@@ -9,9 +9,10 @@ const priceHigh = document.getElementById("highPrice");
 const buttonFilter = document.getElementById("filterButton");
 const ratingButton = document.getElementById("rating-button");
 let filteredList;
+let newFilteredList;
 const bookTable = "Book";
 const noTableBooking = "";
-let newFilteredList
+const ratingButtonImage = document.getElementById("thumbs")
 
 //Fetches data from API
 //Look into using Axios instead of fetch
@@ -29,10 +30,8 @@ fetch(url, {
 
     buttonFilter.addEventListener("click", filterPrice)
     ratingButton.addEventListener("click", sortByRating)
-  })
-
-// Declare functions for reuse at bottom of file
-
+    ratingButton.addEventListener("click", toggleImage);
+  });
 
 //Show restaurants
 const showRestaurants = () => {
@@ -47,9 +46,7 @@ const showRestaurants = () => {
     <h3>${resto.restaurant.name}</h3> 
     <div class="b-a-container">
     <p class="address">${resto.restaurant.location.address}</p>
-    <button class="booking-button" id="booking-button">${tableBooking(
-        resto.restaurant.has_table_booking
-      )}</button>
+    ${tableBooking(resto.restaurant.has_table_booking)}
     </div>
     <br>
     <p class="average-cost">${priceSymbol(
@@ -82,16 +79,32 @@ const filterPrice = () => {
   showRestaurants();
 };
 
+let order = "low";
+
 //sort restaurants by aggregated rating
 const sortByRating = () => {
-  filteredList.sort(
-    (a, b) =>
-      b.restaurant.user_rating.aggregate_rating -
-      a.restaurant.user_rating.aggregate_rating
-  );
+  if (order === "low") {
+    order = "high";
+  } else {
+    order = "low";
+  }
+
+  if (order === "low") {
+    filteredList.sort(
+      (a, b) =>
+        b.restaurant.user_rating.aggregate_rating -
+        a.restaurant.user_rating.aggregate_rating
+    );
+  } else {
+    filteredList.sort(
+      (a, b) =>
+        a.restaurant.user_rating.aggregate_rating -
+        b.restaurant.user_rating.aggregate_rating
+    );
+  }
+
   showRestaurants();
 };
-
 
 //Choosing euro sign/-s from average cost
 const priceSymbol = cost => {
@@ -125,9 +138,14 @@ const smileIcon = ratingScore => {
 
 const tableBooking = booking => {
   if (booking === 1) {
-    booking = bookTable;
+    return `<button class="booking-button" id="booking-button">BOOK</button>`;
   } else {
-    booking = noTableBooking;
+    return noTableBooking;
   }
-  return booking;
+};
+
+//Image turns upsidedown when clicked
+
+const toggleImage = () => {
+  ratingButtonImage.classList.toggle("turn");
 };

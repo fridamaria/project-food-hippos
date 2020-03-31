@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Seafood in Lisbon</title>
-  </head>
 
-  <body>
-    <h1>Seafood restaurants in Lisbon</h1>
-    <h2 class="mobile-title">Restaurants open and online</h2>
-    <article class="card-container">
-      <div class="form-container">
-        <h2>Restaurants open and online</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Tajawal&display=swap" rel="stylesheet" />
+  <title>Seafood in Lisbon</title>
+</head>
 
-        <div class="filter-container">
-          <section class="filter" id="filter-price">
-            <p>Filter on price</p>
+<body>
+  <h1>Seafood restaurants in Lisbon</h1>
+  <h2 class="mobile-title">Restaurants open and online</h2>
+  <article class="card-container">
+    <div class="form-container">
+      <h2>Restaurants open and online</h2>
+
+      <div class="filter-container">
+        <section class="filter" id="filter-price">
+          <p>Filter on price</p>
+          <div class="column-div">
             <input type="radio" id="lowPrice" name="cost" value="low" />
             <label for="lowPrice">€</label>
             <input type="radio" id="mediumPrice" name="cost" value="medium" />
             <label for="mediumPrice">€€</label>
             <input type="radio" id="highPrice" name="cost" value="high" />
             <label for="highPrice">€€€</label>
+          </div>
+          <div class="column-div-buttons">
             <button id="filterButton">Filter</button>
-          </section>
-
-          <div class="rating-container">
-            <p>Filter on rating</p>
-            <button type="button" id="rating-button" class="rating-button">
-              <img src="images/good.png" alt="Thumb pointing up" />
+            <button class="reset" onClick="window.location.reload();">
+              Reset
             </button>
           </div>
+        </section>
+
+        <div class="rating-container">
+          <p>Sort on rating</p>
+          <button type="button" id="rating-button" class="rating-button">
+            <img class="thumbs" id="thumbs" src="images/good.png" alt="Thumb pointing up" />
+          </button>
         </div>
       </div>
+    </div>
 
-      <section id="restaurants" class="restaurant-card"></section>
-    </article>
-    <script src="script.js"></script>
-  </body>
+    <section id="restaurants" class="restaurant-card"></section>
+  </article>
+  <script src="script.js"></script>
+</body>
+
 </html>
 
 <!--
