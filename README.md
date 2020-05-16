@@ -16,9 +16,9 @@ Our group was given the task of creating a website listing restaurants, reviews 
 
 * HTML5
 * CSS3
-* JavaScript 6 / ES6
+* JavaScript ES6
 
 
 ## View it live
 
-View the site here: https://fridamaria-food-project.netlify.com/
+https://fridamaria-food-project.netlify.app/
